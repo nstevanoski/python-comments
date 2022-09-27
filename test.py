@@ -1,5 +1,6 @@
 import json
 import random
+import time
 from telethon import TelegramClient
 
 api_id = 9312723
@@ -34,15 +35,21 @@ def getComments(client: TelegramClient, channel: str, message_id: int):
 
 def sendMessage(client: TelegramClient):
     async def sMessage():
-        messages = ["Hello, How are you?", "Hi, What's up?", "Hey, do you want to gotrained?"]
-        await client.send_message('me', random.choice(messages))
+        messages = [
+            "Hey, I really like your comments on the channel and your way of thinking. i want to invite you to this private Q channel,\nIf you are one of Us, click on the link bellow, Request to Join and i will tell to the admin to ACCEPT your REQUEST.\n\n👇👇👇\n**https://t.me/+uNbRKfySZfE2ODY0**", 
+            "Hello fellow patriot, I have noticed that you are commenting all the time against the dark schemes of the Elites... I really think that you will fit in this private channel just for real Patriots and Freedom Fighters. Click on the link to join to this secret channel, i will tell the admin to approve your membership.\n\n👇👇👇\n**https://t.me/+uNbRKfySZfE2ODY0**", 
+            "Hey i am feeling your anger too, i can see from your comments on different channels that you have had enough of the Dark Scenario. We all have had enough from this Satanic elites.\n\nPlease join us on this Private Channel, i will tell to the admin to approve your request.\n\nWWG1WGA\nIf you know, you know.\n\n👇👇👇\n**https://t.me/+uNbRKfySZfE2ODY0**"
+        ];
+        await client.send_message(1735607573, random.choice(messages))
+        time.sleep(30)
+        print('Sleeping 30s..')
 
     with client:
        client.loop.run_until_complete(sMessage())
 
 # Call functions
 
-getComments(client, 'whip347', 74053);
+# getComments(client, 'whip347', 74053);
 sendMessage(client);
 # print(json.dumps(users)); 
 
